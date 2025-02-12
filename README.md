@@ -1,4 +1,4 @@
-# Analysis of the possibility of using recurrent neural networks to generate new melodies based on the MIDI files
+# A fuzzy system for assessing the mood of songs based on their acoustic characteristics.
 
 ## About project
 The aim of the project was to develop a fuzzy system for assessing the mood of musical pieces based on their acoustic characteristics, 
@@ -30,47 +30,66 @@ The project was implemented using **Python** in the **Google Colab** environment
 ## Descriptive characteristics of input and output variables
 **Input variables:**
 - **Energeticity**: represents the intensity of the music (low, medium, high), measured by signal amplitude analysis.
+
+![1](./images/energetic_character_of_the_song.jpg)
+
 - **Emotional charge**: represents the level of emotion expressed in the music (from depressive to euphoric). Obtained by analysing the tonality, harmony and chord structure of the piece.
+
+![2](./images/emotional_quality_of_the_song.jpg)
+
 - **Danceability**: determines how danceable the piece is, based on the rhythm and tempo of the piece. This is a variable that can be analysed using rhythm analysis tools.
+
+![3](./images/level_of_danceability_of_the_song.jpg)
 
 **Output variables:**
 - **Mood**: determines what emotion the piece evokes (sad, neutral or happy).
 
+![4](./images/mood_of_the_song.jpg)
+
+
+## How does it work?
+
+I chose the Mamdani model for generating the rules in the system because of its simplicity and intuitiveness, which are particularly important 
+in the context of fuzzy mood ratings of musical pieces. It is perfect for generating rules such as “if the energeticity is low and the valence 
+is negative, the mood is sad”, which is a natural approach to expressing the relationship between music features and emotions.
+
+In addition, the Mamdani model allows for easy interpretation of the results, which is important for music recommendation systems where the user 
+expects transparency and simplicity in understanding results like identifying a song as “happy” or “sad”.
+
+The rules were developed by me based on intuition and personal perception of music. For example, low energy and negative valence are intuitively 
+associated with “sadness”, which can be used in the rules of the system.
+
+![5](./images/define_rules.jpg)
+
 ## Images
 **Dataset:**
 
-![1](./images/used_dataset.jpg)
+![6](./images/dataset.jpg)
 
-![2](./images/melodies_used.jpg)
+**Appearance of the interface for searching and selecting songs:**
 
-**Appearance of the interface for generating new melodies:**
+![7](./images/interface.jpg)
 
-![3](./images/interface.jpg)
+![8](./images/interface_with_filter.jpg)
 
-The interface created allows the user to easily adjust the parameters of the melody, such as:
-- **duration of the song** (in seconds) using a slider,
-- **tempo** selected from a drop-down list (slow, moderate, fast).
+The interface created allows the user to easily search for songs by using a filter to enter the name of the artist or their song.
 
-This solution allows new melodies to be dynamically generated without having to look into the code.
+## Scenarios and results
 
-**Model configurations included:**
+![9](./images/lover.jpg)
 
-![4](./images/melody_evaluation_metrics.jpg)
+In the case of the song “Lover” (Taylor Swift), the fuzzy inference system indicated an indeterminate mood, with a predominantly neutral mood. 
+Despite its medium energy and neutral emotional charge, the song did not reach sufficient strength to clearly classify the mood into “sad” or “happy”. 
+This result is as expected, as it is a piece with a calm character that does not evoke extreme emotions.
 
-**Results for selected model evaluation metrics:**
+![10](./images/lose_you_to_love_me.jpg)
 
-![5](./images/model_evaluation_metrics.jpg)
+In this case, the system indicated a sad mood of 66 per cent and some presence of a neutral mood. The song “Lose You to Love Me” has a low energy level 
+and its emotional charge is strongly negative, resulting in a classification as sad. This is in line with what we would expect given the lyrics and emotional 
+charge of this song.
 
-Analysis of the training times showed a significant difference between the **shortest and longest times**. The shortest time was 16 minutes (Model 30), while the longest time reached 358 minutes (Model 26). This difference highlights the variation in performance of the models used in the experiments. Training time increases approximately linearly with the number of epochs, which is expected. Models trained for 100 epochs (e.g. Model 14, Model 15) have significantly longer training times compared to those trained for 10 or 50 epochs.
+![11](./images/bad_liar.jpg)
 
-A higher dropout (e.g. 0.5 in Model 15, 17, 27, 40) leads to an increase in the regularity of the model, which helps to avoid overfitting. These models maintain stable performance on the test set, but may have difficulty learning more complex patterns.
-For both the training and test set, lower values of the **Cross-Entropy Loss** function indicate better model fit. Analysing the results obtained, it can be seen that models consisting of two LSTM layers and smaller dropout values achieve the lowest values for this metric - for example, model 14 and model 26. Furthermore, models trained for a higher number of epochs (100) tend to achieve lower Cross Entropy Loss values.
-
-The values of the Cross-Entropy Loss and Perplexity metrics are correlated. Models characterised by a low value of **Perplexity** for the test set are more predictable and generalise better, which means that the difference between the results for the two sets is small.
-When considering the results obtained, it can be seen that the lowest values on the training set for this metric are obtained by models: 13, 14, 18, 26, 36 and 37, but these values for the test set are already much higher for these models, which may indicate a tendency towards overlearning. In contrast, satisfactory Cross-Entropy Loss and Perplexity results for the training and test set were obtained for models: 8, 15, 16, 17, 40. Considering in the evaluation of the models also the **Cosine Similarity** metric, whose higher values indicate a better representation of the similarity between the model predictions and the actual data, it can be seen that model 8 obtained very poor results.
-
-From the results obtained, it can be concluded that **model number 16** achieves the most satisfactory results of all the models analysed. It is characterised by a relatively low difference in Cross-Entropy Loss and Perplexity values between the training set and the test set, indicating good generalisability. In addition, the very high value of the Cosine Similarity metric suggests that the model is a good fit to the data. It is particularly noteworthy that such good results were obtained with a dropout of 0.3, which helps to reduce the risk of overfitting.
-
-**Results for selected metrics for evaluating the generated melodies:**
-
-![6](./images/melody_evaluation_metrics.jpg)
+The song “Bad Liar” (Selena Gomez) has a positive emotional charge and a high danceability, which influences the inference score indicating a happy mood. 
+The happy score is not dominant (containing 24%), and the system also assigns a significant part of the inferred mood to the neutral category. This is
+in line with the characteristics of the song, which, despite its energy and positive emotional charge, may contain a degree of melancholy.
