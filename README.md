@@ -9,9 +9,7 @@ The system allows the music to be better matched to the listener's emotions, whi
 personalised playlists, as well as support music therapies.
 
 ## Dataset
-The **dataset** used is from the kaggle platform:
-https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi includes works by 19 different composers performed on the piano. 
-I chose pieces composed by Frederic Chopin to train the model.
+The **dataset** used is from the kaggle platform and includes 114000 songs by different artists.
 
 ## Technologies
 The project was implemented using **Python** in the **Google Colab** environment.
@@ -25,29 +23,33 @@ The project was implemented using **Python** in the **Google Colab** environment
 - Ipywidgets - A library to create interactive widgets in Jupyter notebooks for user interaction,
 - IPython.display - displaying images and sounds,
 - mpl_toolkits.mplot3d - A tool in Matplotlib for creating 3D graphs,
-- scikit-fuzzy - Library for implementing fuzzy systems and fuzzy algorithms in Python.
+- **scikit-fuzzy** - Library for implementing fuzzy systems and fuzzy algorithms in Python.
 
 ## Descriptive characteristics of input and output variables
 **Input variables:**
 - **Energeticity**: represents the intensity of the music (low, medium, high), measured by signal amplitude analysis.
+LOW (blue)       MEDIUM (orange)       HIGH (green)
 
 ![1](./images/energetic_character_of_the_song.jpg)
 
 - **Emotional charge**: represents the level of emotion expressed in the music (from depressive to euphoric). Obtained by analysing the tonality, harmony and chord structure of the piece.
+NEGATIVE (blue)       UNMARKED (orange)       POSITIVE (green)
 
 ![2](./images/emotional_quality_of_the_song.jpg)
 
 - **Danceability**: determines how danceable the piece is, based on the rhythm and tempo of the piece. This is a variable that can be analysed using rhythm analysis tools.
+NON-DANCE (blue)       MEDIUM DANCE (orange)       DANCE (green)
 
 ![3](./images/level_of_danceability_of_the_song.jpg)
 
 **Output variables:**
 - **Mood**: determines what emotion the piece evokes (sad, neutral or happy).
+SAD (blue)       NEUTRAL (orange)       HAPPY (green)
 
 ![4](./images/mood_of_the_song.jpg)
 
 
-## How does it work?
+## Implementation
 
 I chose the Mamdani model for generating the rules in the system because of its simplicity and intuitiveness, which are particularly important 
 in the context of fuzzy mood ratings of musical pieces. It is perfect for generating rules such as “if the energeticity is low and the valence 
