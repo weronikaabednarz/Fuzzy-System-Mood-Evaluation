@@ -81,6 +81,7 @@ The interface created allows the user to easily search for songs by using a **fi
 ![8](./images/interface_with_filter.jpg)
 
 ## Scenarios and results
+**First scenario**
 
 ![9](./images/lover.jpg)
 
@@ -88,11 +89,15 @@ In the case of the song “Lover” (Taylor Swift), the fuzzy inference system i
 Despite its medium energy and neutral emotional charge, the song did not reach sufficient strength to clearly classify the mood into “sad” or “happy”. 
 This result is as expected, as it is a piece with a calm character that does not evoke extreme emotions.
 
+**Second scenario**
+
 ![10](./images/lose_you_to_love_me.jpg)
 
 In this case, the system indicated a sad mood of 66 per cent and some presence of a neutral mood. The song “Lose You to Love Me” has a low energy level 
 and its emotional charge is strongly negative, resulting in a classification as sad. This is in line with what we would expect given the lyrics and emotional 
 charge of this song.
+
+**Third scenario**
 
 ![11](./images/bad_liar.jpg)
 
