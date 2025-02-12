@@ -11,6 +11,8 @@ personalised playlists, as well as support music therapies.
 ## Dataset
 The **dataset** used is from the kaggle platform and includes 114000 songs by different artists.
 
+![1](./images/dataset.jpg)
+
 ## Technologies
 The project was implemented using **Python** in the **Google Colab** environment.
 
@@ -31,26 +33,29 @@ The project was implemented using **Python** in the **Google Colab** environment
 
 **LOW** (blue), **MEDIUM** (orange), **HIGH** (green)
 
-![1](./images/energetic_character_of_the_song.jpg)
+![2](./images/energetic_character_of_the_song.jpg)
+
 
 - **Emotional charge**: represents the level of emotion expressed in the music (from depressive to euphoric). Obtained by analysing the tonality, harmony and chord structure of the piece. Values:
 
 **NEGATIVE** (blue), **UNMARKED** (orange), **POSITIVE** (green)
 
-![2](./images/emotional_quality_of_the_song.jpg)
+![3](./images/emotional_quality_of_the_song.jpg)
+
 
 - **Danceability**: determines how danceable the piece is, based on the rhythm and tempo of the piece. This is a variable that can be analysed using rhythm analysis tools. Values:
 
 **NON-DANCE** (blue), **MEDIUM DANCE** (orange), **DANCE** (green)
 
-![3](./images/level_of_danceability_of_the_song.jpg)
+![4](./images/level_of_danceability_of_the_song.jpg)
+
 
 **Output variables:**
 - **Mood**: determines what emotion the piece evokes (sad, neutral or happy). Values:
 
 **SAD** (blue), **NEUTRAL** (orange), **HAPPY** (green)
 
-![4](./images/mood_of_the_song.jpg)
+![5](./images/mood_of_the_song.jpg)
 
 
 ## Implementation
@@ -65,20 +70,15 @@ expects transparency and simplicity in understanding results like identifying a 
 The rules were developed by me based on intuition and personal perception of music. For example, low energy and negative valence are intuitively 
 associated with “sadness”, which can be used in the rules of the system.
 
-![5](./images/define_rules.jpg)
+![6](./images/define_rules.jpg)
 
-## Images
-**Dataset:**
 
-![6](./images/dataset.jpg)
-
-**Appearance of the interface for searching and selecting songs:**
+## Interface for searching and selecting songs
+The interface created allows the user to easily search for songs by using a **filter function** to enter the name of the artist or their song.
 
 ![7](./images/interface.jpg)
 
 ![8](./images/interface_with_filter.jpg)
-
-The interface created allows the user to easily search for songs by using a filter to enter the name of the artist or their song.
 
 ## Scenarios and results
 
