@@ -29,26 +29,26 @@ The project was implemented using **Python** in the **Google Colab** environment
 **Input variables:**
 - **Energeticity**: represents the intensity of the music (low, medium, high), measured by signal amplitude analysis. Values:
 
-LOW (blue)       MEDIUM (orange)       HIGH (green)
+**LOW** (blue), **MEDIUM** (orange), **HIGH** (green)
 
 ![1](./images/energetic_character_of_the_song.jpg)
 
 - **Emotional charge**: represents the level of emotion expressed in the music (from depressive to euphoric). Obtained by analysing the tonality, harmony and chord structure of the piece. Values:
 
-NEGATIVE (blue)       UNMARKED (orange)       POSITIVE (green)
+**NEGATIVE** (blue), **UNMARKED** (orange), **POSITIVE** (green)
 
 ![2](./images/emotional_quality_of_the_song.jpg)
 
 - **Danceability**: determines how danceable the piece is, based on the rhythm and tempo of the piece. This is a variable that can be analysed using rhythm analysis tools. Values:
 
-NON-DANCE (blue)       MEDIUM DANCE (orange)       DANCE (green)
+**NON-DANCE** (blue), **MEDIUM DANCE** (orange), **DANCE** (green)
 
 ![3](./images/level_of_danceability_of_the_song.jpg)
 
 **Output variables:**
 - **Mood**: determines what emotion the piece evokes (sad, neutral or happy). Values:
 
-SAD (blue)       NEUTRAL (orange)       HAPPY (green)
+**SAD** (blue), **NEUTRAL** (orange), **HAPPY** (green)
 
 ![4](./images/mood_of_the_song.jpg)
 
