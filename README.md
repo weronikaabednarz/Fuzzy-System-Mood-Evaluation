@@ -1,4 +1,4 @@
-# A fuzzy system for assessing the mood of songs based on their acoustic characteristics.
+# A fuzzy system for assessing the mood of songs based on their acoustic characteristics
 
 ## About project
 The aim of the project was to develop a fuzzy system for assessing the mood of musical pieces based on their acoustic characteristics, 
