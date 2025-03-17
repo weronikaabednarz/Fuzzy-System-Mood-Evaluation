@@ -1,5 +1,5 @@
 # A fuzzy system for assessing the mood of songs based on their acoustic characteristics
- 
+
 ## About project
 The aim of the project was to develop a fuzzy system for assessing the mood of musical pieces based on their acoustic characteristics, 
 such as **energy**, **valence** (level of emotion - emotional charge) and **danceability**. The developed algorithm is able to determine 
